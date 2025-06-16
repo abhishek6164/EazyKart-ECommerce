@@ -1,65 +1,79 @@
 import axios from "../../api/axiosconfig";
-import { loaduser, removeuser } from "../../store/reducers/userSlice.jsx";
+import { loaduser, removeuser } from "../reducers/userSlice";
 
-export const asyncRegisterUser = (user) => async (dispatch, getState) => {
-  try {
-    const res = await axios.post("/users", user);
-    console.log("Register Response:", res.data);
-  } catch (error) {
-    console.error("Error registering user:", error);
-  }
-};
+// 🟢 Load current user from localStorage (only if valid)
+export const asynccurrentuser = () => async (dispatch, getState) => {
+    try {
+        const userRaw = localStorage.getItem("user");
 
-export const asyncLoginUser = (user) => async (dispatch, getState) => {
-  try {
-    const res = await axios.get(
-      `/users?email=${user.email}&password=${user.password}`
-    );
-    console.log("Login Response:", res.data);
-
-    if (res.data.length > 0) {
-      localStorage.setItem("user", JSON.stringify(res.data[0]));
-      dispatch(loaduser(res.data[0]));
-    } else {
-      console.warn("Invalid credentials: user not found");
+        if (userRaw && userRaw !== "undefined") {
+            const user = JSON.parse(userRaw);
+            if (user) dispatch(loaduser(user));
+        } else {
+            localStorage.removeItem("user"); // Clean if bad data
+        }
+    } catch (error) {
+        console.log("Error parsing user from localStorage:", error);
+        localStorage.removeItem("user");
     }
-  } catch (error) {
-    console.error("Error during login:", error);
-  }
 };
 
-export const asyncLogoutUser = () => async (dispatch, getState) => {
-  try {
-    localStorage.removeItem("user");
-    dispatch(removeuser());
-    console.log("User logged out!");
-  } catch (error) {
-    console.error("Error during logout:", error);
-  }
-};
-
-export const asyncCurrentUser = () => async (dispatch, getState) => {
-  try {
-    const userStr = localStorage.getItem("user");
-
-    if (!userStr || userStr === "undefined") {
-      console.log("user not logged in!");
-      return;
+// 🔴 Logout: remove user from localStorage and redux
+export const asynclogoutuser = () => async (dispatch) => {
+    try {
+        localStorage.removeItem("user");
+        dispatch(removeuser());
+    } catch (error) {
+        console.log("Logout error:", error);
     }
-
-    const user = JSON.parse(userStr);
-    dispatch(loaduser(user));
-  } catch (error) {
-    console.error("Error loading current user:", error);
-  }
 };
 
-export const asyncUpdateUser = (id, user) => async (dispatch, getState) => {
-  try {
-    const { data } = await axios.patch("/users/" + id, user);
-    localStorage.setItem("user", JSON.stringify(data));
-    dispatch(asyncCurrentUser());
-  } catch (error) {
-    console.log(error);
-  }
+// 🔵 Login: validate credentials, save user to localStorage
+export const asyncloginuser = (user) => async (dispatch) => {
+    try {
+        const { data } = await axios.get(
+            `/users?email=${user.email}&password=${user.password}`
+        );
+
+        if (data.length === 0) {
+            console.log("❌ Invalid credentials. User not found.");
+            return;
+        }
+
+        localStorage.setItem("user", JSON.stringify(data[0]));
+        dispatch(loaduser(data[0]));
+    } catch (error) {
+        console.log("Login error:", error);
+    }
+};
+
+// 🟡 Register: post new user to DB
+export const asyncregisteruser = (user) => async () => {
+    try {
+        const res = await axios.post("/users", user);
+        console.log("User registered ✅", res);
+    } catch (error) {
+        console.log("Register error:", error);
+    }
+};
+
+// 🟣 Update user data in DB + localStorage
+export const asyncupdateuser = (id, user) => async (dispatch) => {
+    try {
+        const { data } = await axios.patch("/users/" + id, user);
+        localStorage.setItem("user", JSON.stringify(data));
+        dispatch(asynccurrentuser());
+    } catch (error) {
+        console.log("Update user error:", error);
+    }
+};
+
+// 🔵 Delete user account
+export const asyncdeleteuser = (id) => async (dispatch) => {
+    try {
+        await axios.delete("/users/" + id);
+        dispatch(asynclogoutuser());
+    } catch (error) {
+        console.log("Delete user error:", error);
+    }
 };

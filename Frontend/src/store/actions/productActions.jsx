@@ -1,40 +1,39 @@
 import axios from "../../api/axiosconfig";
-import { loadproduct } from "../../store/reducers/productSlice";
+import { loadproduct } from "../reducers/productSlice";
 
-export const asyncLoadProducts = () => async (dispatch, getState) => {
-  try {
-    const { data } = await axios.get("/products");
-    dispatch(loadproduct(data));
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-export const asyncCreateProduct = (products) => async (dispatch, getState) => {
-  try {
-    await axios.post("/products", products);
-    dispatch(asyncLoadProducts());
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-export const asyncUpdateProduct =
-  (id, products) => async (dispatch, getState) => {
+export const asyncloadproducts = () => async (dispatch, getState) => {
     try {
-      await axios.patch(`/products/${id}`, products);
-      dispatch(asyncLoadProducts());
+        const { data } = await axios.get("/products");
+        dispatch(loadproduct(data));
     } catch (error) {
-      console.error(error);
+        console.log(error);
     }
-  };
-
-export const asyncDeleteProduct = (id) => async (dispatch) => {
-  try {
-    await axios.delete(`/products/${id}`);
-    dispatch(asyncLoadProducts());
-  } catch (error) {
-    console.error(error);
-  }
 };
 
+export const asynccreateproduct = (product) => async (dispatch, getState) => {
+    try {
+        await axios.post("/products", product);
+        dispatch(asyncloadproducts());
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const asyncupdateproduct =
+    (id, product) => async (dispatch, getState) => {
+        try {
+            await axios.patch("/products/" + id, product);
+            dispatch(asyncloadproducts());
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+export const asyncdeleteproduct = (id) => async (dispatch, getState) => {
+    try {
+        await axios.delete("/products/" + id);
+        dispatch(asyncloadproducts());
+    } catch (error) {
+        console.log(error);
+    }
+};

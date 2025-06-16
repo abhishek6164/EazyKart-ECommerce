@@ -1,21 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-// userSlice.jsx
+
 const initialState = {
-  user: null, // 👈 also change to singular
+    users: null,
 };
 
 const userSlice = createSlice({
-  name: "user",
-  initialState,
-  reducers: {
-    loaduser: (state, action) => {
-      state.user = action.payload;
+    name: "user",
+    initialState,
+    reducers: {
+        loaduser: (state, action) => {
+            state.users = action.payload;
+        },
+        removeuser: (state, action) => {
+            state.users = null;
+        },
     },
-    removeuser: (state) => {
-      state.user = null;
-    },
-  },
 });
 
 export default userSlice.reducer;
-export const { loaduser , removeuser  } = userSlice.actions;
+export const { loaduser, removeuser } = userSlice.actions;

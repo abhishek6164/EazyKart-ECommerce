@@ -1,28 +1,41 @@
+import { useEffect } from "react";
 import Nav from "./components/Nav";
 import Mainroutes from "./routes/Mainroutes";
-import Footer from "./pages/Footer"; // 👈 Import Footer
-
-import { useEffect } from "react";
+import { asynccurrentuser } from "./store/actions/userActions";
 import { useDispatch } from "react-redux";
-import { asyncCurrentUser } from "./store/actions/userActions";
-import { asyncLoadProducts } from "./store/actions/productActions";
+import { asyncloadproducts } from "./store/actions/productActions";
+import Footer from "./pages/Footer";
 
 const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(asyncCurrentUser());
-    dispatch(asyncLoadProducts());
-  }, []);
+    const dispatch = useDispatch();
 
-  return (
-    <div className="overflow-auto w-screen min-h-screen bg-gray-900 text-white flex flex-col">
-      <Nav />
-      <main className="flex-grow px-[10%]">
-        <Mainroutes />
-      </main>
-      <Footer />
-    </div>
-  );
+    useEffect(() => {
+        dispatch(asyncloadproducts());
+        dispatch(asynccurrentuser());
+    }, []);
+
+    return (
+        <div className="w-screen min-h-screen bg-[#EAEFEF] text-[#333446] font-sans flex flex-col">
+            {/* Navbar */}
+            <div className="shadow-md bg-white sticky top-0 z-50">
+                <Nav />
+            </div>
+
+            {/* Main Content */}
+            <main className="flex-1 px-4 md:px-10 py-6 bg-[#EAEFEF] overflow-y-auto">
+                <div className="max-w-7xl mx-auto">
+                    <Mainroutes />
+                </div>
+            </main>
+
+            <Footer />
+
+            {/* Footer (Optional Future) */}
+            {/* <footer className="bg-[#333446] text-[#B8CFCE] text-center py-4">
+                © 2025 Crafted with ❤️ by Abhishek
+            </footer> */}
+        </div>
+    );
 };
 
 export default App;

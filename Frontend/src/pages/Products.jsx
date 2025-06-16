@@ -1,93 +1,80 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { asyncUpdateUser } from "../store/actions/userActions";
+import { asyncupdateuser } from "../store/actions/userActions";
+
 const Products = () => {
   const dispatch = useDispatch();
-  const {
-    userReducer: { user },
-    productsReducer: { products },
-  } = useSelector((state) => state);
+  const users = useSelector((state) => state.userReducer.users);
+  const products = useSelector((state) => state.productReducer.products);
 
-  const AddtoCartHandler = (id) => {
-    if (!user || !user.cart) {
-      console.warn("User not found or cart not initialized 🚨");
+  const AddtoCartHandler = (product) => {
+    if (!users || !users.cart) {
+      alert("Please login first to add items to cart.");
       return;
     }
 
-    const updatedCart = [...user.cart]; // safe clone
-    const itemIndex = updatedCart.findIndex((item) => item.productId === id);
+    const copyuser = { ...users, cart: [...users.cart] };
+    const x = copyuser.cart.findIndex((c) => c?.product?.id === product.id);
 
-    if (itemIndex === -1) {
-      updatedCart.push({ productId: id, quantity: 1 });
+    if (x === -1) {
+      copyuser.cart.push({ product, quantity: 1 });
     } else {
-      updatedCart[itemIndex] = {
-        ...updatedCart[itemIndex],
-        quantity: updatedCart[itemIndex].quantity + 1,
+      copyuser.cart[x] = {
+        product,
+        quantity: copyuser.cart[x].quantity + 1,
       };
     }
 
-    const updatedUser = { ...user, cart: updatedCart };
-    dispatch(asyncUpdateUser(user.id, updatedUser));
+    dispatch(asyncupdateuser(copyuser.id, copyuser));
   };
 
-  const renderProducts = () => {
-    return (
-      <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white/5 border border-white/10 rounded-3xl p-6 shadow-[0_0_20px_#9333ea44] hover:shadow-[0_0_40px_#d946ef55] hover:scale-[1.03] transition duration-300 backdrop-blur-lg"
-          >
-            <img
-              src={product.image}
-              alt={product.name}
-              className="h-52 w-full object-cover rounded-2xl mb-4 border border-white/20"
-            />
-            <h2 className="text-xl font-bold text-white mb-1">
-              {product.name}
-            </h2>
-            <p className="text-sm text-white/60 mb-3">
-              {product.description.slice(0, 60)}...
-            </p>
-            <p className="text-lg font-semibold text-pink-400 mb-1">
-              ₹{product.price}
-            </p>
+  const renderProduct = products.map((product) => (
+    <div
+      key={product.id}
+      className="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl border border-[#d4dddd] shadow-[0_6px_16px_rgba(0,0,0,0.06)] p-4 mb-6 mx-2 flex flex-col justify-between transition-transform hover:scale-[1.025] hover:shadow-[0_10px_24px_rgba(0,0,0,0.1)] duration-300"
+    >
+      <img
+        src={product.image}
+        alt={product.title}
+        className="w-full h-60 object-contain rounded-xl mb-4 bg-[#f3f5f5] p-4"
+      />
 
-            <p className="text-xs text-white/40 mb-4">
-              Category: {product.category}
-            </p>
-
-            <button
-              onClick={() => AddtoCartHandler(product.id)}
-              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-xl font-semibold hover:scale-105 transition-transform"
-            >
-              Add to Cart 🛒
-            </button>
-            <Link
-              to={`/product/${product.id}`}
-              className="block text-center text-cyan-300 mt-2 text-sm hover:underline"
-            >
-              View Details
-            </Link>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-28 px-6 md:px-14 lg:px-20">
-      <h1 className="text-4xl md:text-5xl font-extrabold mb-12 text-center bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-        ✨ Explore Our Exclusive Products
+      <h1 className="text-lg font-bold text-[#333446] mb-2 line-clamp-2">
+        {product.title}
       </h1>
+      <p className="text-sm text-[#7F8CAA] mb-3 line-clamp-3">
+        {product.description.slice(0, 100)}...
+      </p>
 
-      {products?.length > 0 ? (
-        renderProducts()
-      ) : (
-        <div className="text-center text-white/70 text-lg animate-pulse">
-          ⏳ Loading Products...
-        </div>
-      )}
+      <div className="flex items-center justify-between mt-auto">
+        <p className="text-lg font-bold text-[#2e2f3e]">₹{product.price}</p>
+        <button
+          onClick={() => AddtoCartHandler(product)}
+          disabled={!users}
+          className={`bg-[#7F8CAA] hover:bg-[#333446] text-white px-4 py-2 rounded-full transition-all duration-300 font-medium ${
+            !users ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+        >
+          Add to Cart
+        </button>
+      </div>
+
+      <Link
+        to={`/product/${product.id}`}
+        className="text-xs mt-3 text-center text-[#7F8CAA] hover:text-[#333446] transition underline decoration-dotted underline-offset-4"
+      >
+        🔍 More Info
+      </Link>
+    </div>
+  ));
+
+  return products.length > 0 ? (
+    <div className="bg-[#EAEFEF] min-h-screen px-4 py-8 flex flex-wrap justify-center">
+      {renderProduct}
+    </div>
+  ) : (
+    <div className="text-[#333446] text-xl font-medium text-center mt-10">
+      Loading products...
     </div>
   );
 };
