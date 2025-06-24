@@ -1,51 +1,47 @@
 import { lazy } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { asyncupdateuser } from "../store/actions/userActions";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { loadlazyproduct } from "../store/reducers/productSlice";
+import useInfiniteProducts from "../utils/useInfiniteProducts";
 const ProductTemplate = lazy(() => import("../components/ProductTemplate"));
 const Products = () => {
+
   const dispatch = useDispatch();
   const users = useSelector((state) => state.userReducer.users);
-  const products = useSelector((state) => state.productReducer.products); // ✅
-  const [hasMore, setHasMore] = useState(true);
+  const { products, hasMore, fetchProducts } = useInfiniteProducts();
+  // const products = useSelector((state) => state.productReducer.products); // ✅
+  // const [hasMore, setHasMore] = useState(true);
 
-  const fetchProducts = async () => {
-    try {
-      const { data } = await axios.get(
-        `http://localhost:3000/products?_limit=6&_start=${products.length}`
-      );
-      console.log("Fetched data:", data);
+  // const fetchProducts = async () => {
+  //   try {
+  //     const { data } = await axios.get(
+  //       `http://localhost:3000/products?_limit=6&_start=${products.length}`
+  //     );
+  //     console.log("Fetched data:", data);
 
-      let newProducts = [];
-      if (Array.isArray(data)) {
-        newProducts = data;
-      } else if (data?.products && Array.isArray(data.products)) {
-        newProducts = data.products;
-      } else {
-        console.error("❌ Unexpected data structure:", data);
-        setHasMore(false);
-        return;
-      }
+  //     let newProducts = [];
+  //     if (Array.isArray(data)) {
+  //       newProducts = data;
+  //     } else if (data?.products && Array.isArray(data.products)) {
+  //       newProducts = data.products;
+  //     } else {
+  //       console.error("❌ Unexpected data structure:", data);
+  //       setHasMore(false);
+  //       return;
+  //     }
 
-      // ✅ Use correct payload while dispatching
-      dispatch(loadlazyproduct(newProducts));
+  //     // ✅ Use correct payload while dispatching
+  //     dispatch(loadlazyproduct(newProducts));
 
-      if (newProducts.length < 6) {
-        setHasMore(false);
-      }
-    } catch (error) {
-      console.error("Error fetching products:", error);
-      setHasMore(false);
-    }
-  };
-
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  //     if (newProducts.length < 6) {
+  //       setHasMore(false);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching products:", error);
+  //     setHasMore(false);
+  //   }
+  // };
 
   const AddToCartHandler = (product) => {
     if (!users || !users.cart) {
@@ -68,6 +64,7 @@ const Products = () => {
     dispatch(asyncupdateuser(copyUser.id, copyUser));
   };
 
+
   const renderProduct = Array.isArray(products)
     ? products.map((product, index) => (
       <ProductTemplate
@@ -77,6 +74,7 @@ const Products = () => {
         users={users}
         AddToCartHandler={AddToCartHandler}
       />
+
     ))
     : null;
 

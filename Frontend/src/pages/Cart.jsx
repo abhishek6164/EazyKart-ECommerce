@@ -39,10 +39,11 @@ const Cart = () => {
         className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#B8CFCE] text-[#333446] p-4 rounded-lg shadow-md mb-6"
       >
         <img
-          className="w-28 h-28 object-cover rounded-md shadow-sm"
-          src={c?.product?.image}
-          alt={c?.product?.title || "Product"}
-        />
+  className="w-28 h-28 object-cover rounded-md shadow-sm"
+  src={c?.product?.image || c?.product?.images?.[0] || "/placeholder.png"}
+  alt={c?.product?.title || "Product"}
+/>
+
 
         <div className="flex-1 text-center sm:text-left">
           <h3 className="text-lg font-semibold">{c?.product?.title}</h3>

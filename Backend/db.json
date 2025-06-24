@@ -49,14 +49,252 @@
       "cart": [
         {
           "product": {
-            "id": "1",
-            "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-            "price": 109.95,
-            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-            "category": "men's clothing",
-            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+            "id": "109",
+            "title": "Elegant Golden-Base Stone Top Dining Table",
+            "slug": "elegant-golden-base-stone-top-dining-table",
+            "price": 66,
+            "description": "Elevate your dining space with this luxurious table, featuring a sturdy golden metal base with an intricate rod design that provides both stability and chic elegance. The smooth stone top in a sleek round shape offers a robust surface for your dining pleasure. Perfect for both everyday meals and special occasions, this table easily complements any modern or glam decor.",
+            "category": {
+              "id": 3,
+              "name": "Furniture",
+              "slug": "furniture",
+              "image": "https://i.imgur.com/Qphac99.jpeg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:51:49.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/NWIJKUj.jpeg",
+              "https://i.imgur.com/Jn1YSLk.jpeg",
+              "https://i.imgur.com/VNZRvx5.jpeg"
+            ],
+            "creationAt": "2025-06-23T09:20:22.000Z",
+            "updatedAt": "2025-06-23T09:20:22.000Z"
           },
           "quantity": 3
+        },
+        {
+          "product": {
+            "id": "110",
+            "title": "Elegant Solid Wood Dining Table",
+            "slug": "elegant-solid-wood-dining-table",
+            "price": 67,
+            "description": "Enhance your dining space with this sleek, contemporary dining table, crafted from high-quality solid wood with a warm finish. Its sturdy construction and minimalist design make it a perfect addition for any home looking for a touch of elegance. Accommodates up to six guests comfortably and includes a striking fruit bowl centerpiece. The overhead lighting is not included.",
+            "category": {
+              "id": 3,
+              "name": "Furniture",
+              "slug": "furniture",
+              "image": "https://i.imgur.com/Qphac99.jpeg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:51:49.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/4lTaHfF.jpeg",
+              "https://i.imgur.com/JktHE1C.jpeg",
+              "https://i.imgur.com/cQeXQMi.jpeg"
+            ],
+            "creationAt": "2025-06-23T09:20:23.000Z",
+            "updatedAt": "2025-06-23T09:20:23.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "111",
+            "title": "Modern Ergonomic Office Chair",
+            "slug": "modern-ergonomic-office-chair",
+            "price": 71,
+            "description": "Elevate your office space with this sleek and comfortable Modern Ergonomic Office Chair. Designed to provide optimal support throughout the workday, it features an adjustable height mechanism, smooth-rolling casters for easy mobility, and a cushioned seat for extended comfort. The clean lines and minimalist white design make it a versatile addition to any contemporary workspace.",
+            "category": {
+              "id": 3,
+              "name": "Furniture",
+              "slug": "furniture",
+              "image": "https://i.imgur.com/Qphac99.jpeg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:51:49.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/3dU0m72.jpeg",
+              "https://i.imgur.com/zPU3EVa.jpeg"
+            ],
+            "creationAt": "2025-06-23T09:20:23.000Z",
+            "updatedAt": "2025-06-23T09:20:23.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "114",
+            "title": "Futuristic Holographic Soccer Cleats",
+            "slug": "futuristic-holographic-soccer-cleats",
+            "price": 39,
+            "description": "Step onto the field and stand out from the crowd with these eye-catching holographic soccer cleats. Designed for the modern player, these cleats feature a sleek silhouette, lightweight construction for maximum agility, and durable studs for optimal traction. The shimmering holographic finish reflects a rainbow of colors as you move, ensuring that you'll be noticed for both your skills and style. Perfect for the fashion-forward athlete who wants to make a statement.",
+            "category": {
+              "id": 4,
+              "name": "Shoes",
+              "slug": "shoes",
+              "image": "https://i.imgur.com/qNOjJje.jpeg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:20:17.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/qNOjJje.jpeg",
+              "https://i.imgur.com/NjfCFnu.jpeg",
+              "https://i.imgur.com/eYtvXS1.jpeg"
+            ],
+            "creationAt": "2025-06-23T09:20:23.000Z",
+            "updatedAt": "2025-06-23T09:20:23.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "113",
+            "title": "Rainbow Glitter High Heels",
+            "slug": "rainbow-glitter-high-heels",
+            "price": 39,
+            "description": "Step into the spotlight with these eye-catching rainbow glitter high heels. Designed to dazzle, each shoe boasts a kaleidoscope of shimmering colors that catch and reflect light with every step. Perfect for special occasions or a night out, these stunners are sure to turn heads and elevate any ensemble.",
+            "category": {
+              "id": 4,
+              "name": "Shoes",
+              "slug": "shoes",
+              "image": "https://i.imgur.com/qNOjJje.jpeg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:20:17.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/62gGzeF.jpeg",
+              "https://i.imgur.com/5MoPuFM.jpeg",
+              "https://i.imgur.com/sUVj7pK.jpeg"
+            ],
+            "creationAt": "2025-06-23T09:20:23.000Z",
+            "updatedAt": "2025-06-23T09:20:23.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "112",
+            "title": "Modern Minimalist Workstation Setup",
+            "slug": "modern-minimalist-workstation-setup",
+            "price": 49,
+            "description": "Elevate your home office with our Modern Minimalist Workstation Setup, featuring a sleek wooden desk topped with an elegant computer, stylish adjustable wooden desk lamp, and complimentary accessories for a clean, productive workspace. This setup is perfect for professionals seeking a contemporary look that combines functionality with design.",
+            "category": {
+              "id": 3,
+              "name": "Furniture",
+              "slug": "furniture",
+              "image": "https://i.imgur.com/Qphac99.jpeg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:51:49.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/3oXNBst.jpeg",
+              "https://i.imgur.com/ErYYZnT.jpeg",
+              "https://i.imgur.com/boBPwYW.jpeg"
+            ],
+            "creationAt": "2025-06-23T09:20:23.000Z",
+            "updatedAt": "2025-06-23T09:20:23.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "119",
+            "title": "Elegant Patent Leather Peep-Toe Pumps with Gold-Tone Heel",
+            "slug": "elegant-patent-leather-peep-toe-pumps-with-gold-tone-heel",
+            "price": 53,
+            "description": "Step into sophistication with these chic peep-toe pumps, showcasing a lustrous patent leather finish and an eye-catching gold-tone block heel. The ornate buckle detail adds a touch of glamour, perfect for elevating your evening attire or complementing a polished daytime look.",
+            "category": {
+              "id": 4,
+              "name": "Shoes",
+              "slug": "shoes",
+              "image": "https://i.imgur.com/qNOjJje.jpeg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:20:17.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/AzAY4Ed.jpeg",
+              "https://i.imgur.com/umfnS9P.jpeg",
+              "https://i.imgur.com/uFyuvLg.jpeg"
+            ],
+            "creationAt": "2025-06-23T09:20:24.000Z",
+            "updatedAt": "2025-06-23T09:20:24.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "121",
+            "title": "Elegant Purple Leather Loafers",
+            "slug": "elegant-purple-leather-loafers",
+            "price": 17,
+            "description": "Step into sophistication with our Elegant Purple Leather Loafers, perfect for making a bold statement. Crafted from high-quality leather with a vibrant purple finish, these shoes feature a classic loafer silhouette that's been updated with a contemporary twist. The comfortable slip-on design and durable soles ensure both style and functionality for the modern man.",
+            "category": {
+              "id": 4,
+              "name": "Shoes",
+              "slug": "shoes",
+              "image": "https://i.imgur.com/qNOjJje.jpeg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:20:17.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/Au8J9sX.jpeg",
+              "https://i.imgur.com/gdr8BW2.jpeg",
+              "https://i.imgur.com/KDCZxnJ.jpeg"
+            ],
+            "creationAt": "2025-06-23T09:20:24.000Z",
+            "updatedAt": "2025-06-23T09:20:24.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "127",
+            "title": "Trendy Pink-Tinted Sunglasses",
+            "slug": "trendy-pink-tinted-sunglasses",
+            "price": 38,
+            "description": "Step up your style game with these fashionable black-framed, pink-tinted sunglasses. Perfect for making a statement while protecting your eyes from the glare. Their bold color and contemporary design make these shades a must-have accessory for any trendsetter looking to add a pop of color to their ensemble.",
+            "category": {
+              "id": 5,
+              "name": "Miscellaneous",
+              "slug": "miscellaneous",
+              "image": "https://i.imgur.com/BG8J0Fj.jpg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:52:09.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/0qQBkxX.jpg",
+              "https://i.imgur.com/I5g1DoE.jpg",
+              "https://i.imgur.com/myfFQBW.jpg"
+            ],
+            "creationAt": "2025-06-23T09:20:24.000Z",
+            "updatedAt": "2025-06-23T09:20:24.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "126",
+            "title": "Sleek Olive Green Hardshell Carry-On Luggage",
+            "slug": "sleek-olive-green-hardshell-carry-on-luggage",
+            "price": 48,
+            "description": "Travel in style with our durable hardshell carry-on, perfect for weekend getaways and business trips. This sleek olive green suitcase features smooth gliding wheels for easy airport navigation, a sturdy telescopic handle, and a secure zippered compartment to keep your belongings safe. Its compact size meets most airline overhead bin requirements, ensuring a hassle-free flying experience.",
+            "category": {
+              "id": 5,
+              "name": "Miscellaneous",
+              "slug": "miscellaneous",
+              "image": "https://i.imgur.com/BG8J0Fj.jpg",
+              "creationAt": "2025-06-22T15:19:21.000Z",
+              "updatedAt": "2025-06-23T09:52:09.000Z"
+            },
+            "images": [
+              "https://i.imgur.com/jVfoZnP.jpg",
+              "https://i.imgur.com/Tnl15XK.jpg",
+              "https://i.imgur.com/7OqTPO6.jpg"
+            ],
+            "creationAt": "2025-06-23T09:20:24.000Z",
+            "updatedAt": "2025-06-23T09:20:24.000Z"
+          },
+          "quantity": 1
         }
       ]
     },
@@ -83,7 +321,7 @@
   ],
   "products": [
     {
-      "id": 109,
+      "id": "109",
       "title": "Elegant Golden-Base Stone Top Dining Table",
       "slug": "elegant-golden-base-stone-top-dining-table",
       "price": 66,
@@ -105,7 +343,7 @@
       "updatedAt": "2025-06-23T09:20:22.000Z"
     },
     {
-      "id": 110,
+      "id": "110",
       "title": "Elegant Solid Wood Dining Table",
       "slug": "elegant-solid-wood-dining-table",
       "price": 67,
@@ -127,7 +365,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 111,
+      "id": "111",
       "title": "Modern Ergonomic Office Chair",
       "slug": "modern-ergonomic-office-chair",
       "price": 71,
@@ -148,7 +386,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 112,
+      "id": "112",
       "title": "Modern Minimalist Workstation Setup",
       "slug": "modern-minimalist-workstation-setup",
       "price": 49,
@@ -170,7 +408,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 113,
+      "id": "113",
       "title": "Rainbow Glitter High Heels",
       "slug": "rainbow-glitter-high-heels",
       "price": 39,
@@ -192,7 +430,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 114,
+      "id": "114",
       "title": "Futuristic Holographic Soccer Cleats",
       "slug": "futuristic-holographic-soccer-cleats",
       "price": 39,
@@ -214,7 +452,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 115,
+      "id": "115",
       "title": "Chic Summer Denim Espadrille Sandals",
       "slug": "chic-summer-denim-espadrille-sandals",
       "price": 33,
@@ -236,7 +474,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 116,
+      "id": "116",
       "title": "Vibrant Runners: Bold Orange & Blue Sneakers",
       "slug": "vibrant-runners-bold-orange-blue-sneakers",
       "price": 27,
@@ -258,7 +496,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 117,
+      "id": "117",
       "title": "Vibrant Pink Classic Sneakers",
       "slug": "vibrant-pink-classic-sneakers",
       "price": 84,
@@ -280,7 +518,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 118,
+      "id": "118",
       "title": "Futuristic Silver and Gold High-Top Sneaker",
       "slug": "futuristic-silver-and-gold-high-top-sneaker",
       "price": 68,
@@ -302,7 +540,7 @@
       "updatedAt": "2025-06-23T09:20:23.000Z"
     },
     {
-      "id": 119,
+      "id": "119",
       "title": "Elegant Patent Leather Peep-Toe Pumps with Gold-Tone Heel",
       "slug": "elegant-patent-leather-peep-toe-pumps-with-gold-tone-heel",
       "price": 53,
@@ -324,7 +562,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 121,
+      "id": "121",
       "title": "Elegant Purple Leather Loafers",
       "slug": "elegant-purple-leather-loafers",
       "price": 17,
@@ -346,7 +584,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 122,
+      "id": "122",
       "title": "Classic Blue Suede Casual Shoes",
       "slug": "classic-blue-suede-casual-shoes",
       "price": 39,
@@ -368,7 +606,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 123,
+      "id": "123",
       "title": "Sleek Futuristic Electric Bicycle",
       "slug": "sleek-futuristic-electric-bicycle",
       "price": 22,
@@ -390,7 +628,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 124,
+      "id": "124",
       "title": "Radiant Citrus Eau de Parfum",
       "slug": "radiant-citrus-eau-de-parfum",
       "price": 73,
@@ -412,7 +650,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 125,
+      "id": "125",
       "title": "Sleek All-Terrain Go-Kart",
       "slug": "sleek-all-terrain-go-kart",
       "price": 37,
@@ -434,7 +672,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 126,
+      "id": "126",
       "title": "Sleek Olive Green Hardshell Carry-On Luggage",
       "slug": "sleek-olive-green-hardshell-carry-on-luggage",
       "price": 48,
@@ -456,7 +694,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 127,
+      "id": "127",
       "title": "Trendy Pink-Tinted Sunglasses",
       "slug": "trendy-pink-tinted-sunglasses",
       "price": 38,
@@ -478,7 +716,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 128,
+      "id": "128",
       "title": "Chic Transparent Fashion Handbag",
       "slug": "chic-transparent-fashion-handbag",
       "price": 61,
@@ -500,7 +738,7 @@
       "updatedAt": "2025-06-23T09:20:24.000Z"
     },
     {
-      "id": 129,
+      "id": "129",
       "title": "Elegant Glass Tumbler Set",
       "slug": "elegant-glass-tumbler-set",
       "price": 50,
@@ -522,7 +760,7 @@
       "updatedAt": "2025-06-23T09:20:25.000Z"
     },
     {
-      "id": 135,
+      "id": "135",
       "title": "New Product2",
       "slug": "new-product2",
       "price": 10,
@@ -535,12 +773,14 @@
         "creationAt": "2025-06-22T15:19:21.000Z",
         "updatedAt": "2025-06-22T23:53:11.000Z"
       },
-      "images": ["https://placehold.co/600x400"],
+      "images": [
+        "https://placehold.co/600x400"
+      ],
       "creationAt": "2025-06-23T11:02:58.000Z",
       "updatedAt": "2025-06-23T11:02:58.000Z"
     },
     {
-      "id": 136,
+      "id": "136",
       "title": "New Cotton Shirt2",
       "slug": "new-cotton-shirt2",
       "price": 1100,
@@ -553,12 +793,14 @@
         "creationAt": "2025-06-22T15:19:21.000Z",
         "updatedAt": "2025-06-22T23:53:11.000Z"
       },
-      "images": ["https://placeimg.com/640/480/cotton"],
+      "images": [
+        "https://placeimg.com/640/480/cotton"
+      ],
       "creationAt": "2025-06-23T11:03:10.000Z",
       "updatedAt": "2025-06-23T11:03:10.000Z"
     },
     {
-      "id": 137,
+      "id": "137",
       "title": "Mobile Phones",
       "slug": "mobile-phones",
       "price": 10,
@@ -571,7 +813,9 @@
         "creationAt": "2025-06-22T15:19:21.000Z",
         "updatedAt": "2025-06-22T23:53:11.000Z"
       },
-      "images": ["https://placeimg.com/640/480/any"],
+      "images": [
+        "https://placeimg.com/640/480/any"
+      ],
       "creationAt": "2025-06-23T11:03:13.000Z",
       "updatedAt": "2025-06-23T11:03:13.000Z"
     }

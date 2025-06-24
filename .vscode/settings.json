@@ -2,7 +2,9 @@
     "cSpell.words": [
         "abhishek",
         "Addto",
+        "asynccreateproduct",
         "asynccurrentuser",
+        "asyncdeleteproduct",
         "asyncdeleteuser",
         "asyncgetproducts",
         "asyncgetusers",
@@ -10,6 +12,7 @@
         "asyncloginuser",
         "asynclogoutuser",
         "asyncregisteruser",
+        "asyncupdateproduct",
         "asyncupdateuser",
         "axiosconfig",
         "copyuser",
