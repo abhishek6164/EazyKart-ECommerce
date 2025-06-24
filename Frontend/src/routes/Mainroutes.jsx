@@ -1,15 +1,17 @@
+import { lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Products from "../pages/Products";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import CreateProduct from "../pages/admin/CreateProduct";
-import UserProfile from "../pages/user/UserProfile";
-import ProductDetails from "../pages/admin/ProductDetails";
-import AuthWrapper from "./AuthWrapper";
-import Cart from "../pages/Cart";
-import PageNotFound from "../pages/PageNotFound";
+import UnauthWrapper from "./UnauthWrapper";
+const PageNotFound = lazy(() => import("../pages/PageNotFound"));
+const AuthWrapper = lazy(() => import("./AuthWrapper"));
+const ProductDetails = lazy(() => import("../pages/admin/ProductDetails"));
+const UserProfile = lazy(() => import("../pages/user/UserProfile"));
+const CreateProduct = lazy(() => import("../pages/admin/CreateProduct"));
+const Register = lazy(() => import("../pages/Register"));
+const Login = lazy(() => import("../pages/Login"));
+const Home = lazy(() => import("../pages/Home"));
+const Products = lazy(() => import("../pages/Products"));
+const Cart = lazy(() => import("../pages/Cart"));
 
 const Mainroutes = () => {
   const location = useLocation();
@@ -19,8 +21,9 @@ const Mainroutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+
+        <Route path="/login" element={<UnauthWrapper> <Login />  </UnauthWrapper>} />
+        <Route path="/register" element={<UnauthWrapper><Register /></UnauthWrapper>} />
 
         <Route
           path="/admin/create-product"

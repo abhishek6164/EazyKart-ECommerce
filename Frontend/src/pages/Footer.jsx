@@ -5,7 +5,7 @@ const Footer = () => {
         {/* Brand Info */}
         <div>
           <h2 className="text-2xl font-bold text-[#B8CFCE] mb-4 tracking-wide">
-            ShopVerse
+            EazyKart
           </h2>
           <p className="text-sm text-[#7F8CAA]">
             Your ultimate destination for quality products and a seamless shopping experience.
@@ -43,7 +43,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-10 border-t border-[#7F8CAA]/40 pt-6 text-center text-xs text-[#7F8CAA]">
-        &copy; {new Date().getFullYear()} <span className="font-semibold text-[#B8CFCE]">ShopVerse</span>. All rights reserved.
+        &copy; {new Date().getFullYear()} <span className="font-semibold text-[#B8CFCE]">EazyKart</span>. All rights reserved.
       </div>
     </footer>
   );

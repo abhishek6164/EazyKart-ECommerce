@@ -12,8 +12,12 @@ const productSlice = createSlice({
             // here we can not call api
             state.products = action.payload;
         },
+        loadlazyproduct: (state, action) => {
+            // here we can not call api
+            state.products = [...state.products, ...action.payload];
+        },
     },
 });
 
 export default productSlice.reducer;
-export const { loadproduct } = productSlice.actions;
+export const { loadproduct ,loadlazyproduct} = productSlice.actions;

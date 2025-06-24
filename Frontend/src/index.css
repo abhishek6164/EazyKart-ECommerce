@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 @import "tailwindcss";
 @keyframes float {
     0% { transform: translateY(0px); }
@@ -8,3 +11,10 @@
     animation: float 3s ease-in-out infinite;
   }
   
+
+.font-agile {
+  font-family: 'Agile', sans-serif;
+}
+.font-mooxy {
+  font-family: 'mooxy', sans-serif;
+}
